@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet SharePoint - Ressources PDF SESEO Formation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f0f8ff; /* Background light blue */
+        }
+        .header, .footer {
+            background-color: #1e3a8a; /* Blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+        .main {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+        .sidebar {
+            background-color: #005f73; /* Blue canard */
+            color: white;
+            padding: 20px;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+        }
+        .content h2 {
+            border-bottom: 2px solid #fb923c; /* Orange */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #1e3a8a; /* Blue */
+            text-align: center;
+        }
+        .document-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+        .document-table th, .document-table td {
+            border: 1px solid #1e3a8a; /* Blue */
+            padding: 10px;
+            text-align: left;
+        }
+        .document-table th {
+            background-color: #005f73; /* Blue canard */
+            color: white;
+        }
+        .document-table tr:nth-child(even) {
+            background-color: #e0f2fe; /* Light blue */
+        }
+        .sidebar a {
+            display: block;
+            color: #fb923c; /* Orange */
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+        .footer a {
+            color: #fb923c; /* Orange */
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .main {
+                flex-direction: row;
+            }
+            .sidebar {
+                width: 20%;
+                padding: 20px;
+            }
+            .content {
+                flex: 1;
+                padding: 20px;
+            }
+        }
+        @media (max-width: 767px) {
+            .sidebar {
+                width: 100%;
+                padding: 10px;
+                text-align: center;
+            }
+            .document-table th, .document-table td {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="https://www.seseo-formation.com/wp-content/uploads/2020/11/Logo-seseo.png" alt="Logo SESEO Formation">
+        <h1>Ressources PDF SESEO Formation</h1>
+    </div>
+
+    <div class="main">
+        <div class="sidebar">
+            <h3>Liens Rapides</h3>
+            <a href="#contrats">Voir tous les Contrats</a>
+            <a href="#attestations">Voir toutes les Attestations Fiscales</a>
+            <a href="#factures">Voir toutes les Factures</a>
+        </div>
+
+        <div class="content">
+            <h2 id="contrats">P422 - Contrats</h2>
+            <table class="document-table">
+                <thead>
+                    <tr>
+                        <th>Type de Document</th>
+                        <th>Date</th>
+                        <th>Client</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Contrat</td>
+                        <td>01/01/2024</td>
+                        <td>Client A</td>
+                        <td>Contrat de service</td>
+                    </tr>
+                    <!-- Ajoutez d'autres entrées ici -->
+                </tbody>
+            </table>
+
+            <h2 id="attestations">P063 - Attestations Fiscales</h2>
+            <h3 id="2017">2017</h3>
+            <table class="document-table">
+                <thead>
+                    <tr>
+                        <th>Type de Document</th>
+                        <th>Date</th>
+                        <th>Client</th>
+                        <th>Description</th>
+                        <th>Fichier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Attestation Fiscale</td>
+                        <td>15/02/2017</td>
+                        <td>Client EPONS</td>
+                        <td>Attestation fiscale annuelle</td>
+                        <td><a href="pdfs/AF20170001%20-%20EPONS.pdf" download>Télécharger</a></td>
+                    </tr>
+                    <tr>
+                        <td>Attestation Fiscale</td>
+                        <td>12/03/2017</td>
+                        <td>Client FHOURS</td>
+                        <td>Attestation fiscale annuelle</td>
+                        <td><a href="pdfs/AF20170003%20-%20FHOURS.pdf" download>Télécharger</a></td>
+                    </tr>
+                    <tr>
+                        <td>Attestation Fiscale</td>
+                        <td>24/04/2017</td>
+                        <td>Client FRAYNALT</td>
+                        <td>Attestation fiscale annuelle</td>
+                        <td><a href="pdfs/AF20170004%20-%20FRAYNALT.pdf" download>Télécharger</a></td>
+                    </tr>
+                    <tr>
+                        <td>Attestation Fiscale</td>
+                        <td>18/05/2017</td>
+                        <td>Client RBRETVITOZ</td>
+                        <td>Attestation fiscale annuelle</td>
+                        <td><a href="pdfs/AF20170005%20-%20RBRETVITOZ.pdf" download>Télécharger</a></td>
+                    </tr>
+                    <!-- Ajoutez d'autres entrées ici -->
+                </tbody>
+            </table>
+
+            <h2 id="factures">P424 - Factures</h2>
+            <table class="document-table">
+                <thead>
+                    <tr>
+                        <th>Type de Document</th>
+                        <th>Date</th>
+                        <th>Client</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Facture</td>
+                        <td>20/03/2024</td>
+                        <td>Client C</td>
+                        <td>Facture de mars 2024</td>
+                    </tr>
+                    <!-- Ajoutez d'autres entrées ici -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2024 Entreprise SESEO FORMATION | <a href="#">Contact</a> | <a href="#">Confidentialité</a> | <a href="#">Conditions</a>
+    </div>
+
+</body>
+</html>
