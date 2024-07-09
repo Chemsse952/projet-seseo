@@ -3,180 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ressources PDF SESEO Formation</title>
+    <title>Intranet SESEO FORMATION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
             color: #333;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .client-list {
+            max-width: 900px;
+            margin: auto;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 1.5rem;
         }
 
-        .header {
-            background-color: #008080; /* Bleu canard */
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            width: 100%;
+        .client {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .logo {
-            height: 50px;
-            margin-right: 20px;
+        .client:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .title {
-            flex-grow: 1;
-            text-align: center;
+        .client h3 {
             margin: 0;
-            font-size: 1.5em;
+            font-size: 1.5rem;
         }
 
-        .nav {
-            background-color: #005f99; /* Bleu */
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            width: 100%;
-        }
-
-        .nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .nav li {
-            margin: 0 15px;
-        }
-
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .content {
-            padding: 20px;
-            background-color: #f9f9f9; /* Blanc */
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .client-details {
+            display: none;
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
 
         .section {
-            margin-bottom: 20px;
-            width: 80%;
-            max-width: 800px;
-        }
-
-        .section h2 {
-            color: #008080; /* Bleu canard */
-            border-bottom: 2px solid #ffa500; /* Orange */
-            padding-bottom: 5px;
-            text-align: center;
-        }
-
-        .file-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .file-list li {
-            background-color: #e0f7fa; /* Light Cyan */
-            margin: 5px 0;
-            padding: 10px;
-            border-left: 5px solid #ffa500; /* Orange */
-        }
-
-        .file-list a {
-            color: #005f99; /* Bleu */
+            background-color: #e0f7fa;
+            padding: 1rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
             text-decoration: none;
+            color: inherit;
+            font-weight: 500;
         }
 
-        .footer {
-            background-color: #005f99; /* Bleu */
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
+        .section:hover {
+            background-color: #b2ebf2;
         }
 
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
+        .section:nth-child(2) {
+            background-color: #c8e6c9;
+        }
 
-            .nav ul {
-                flex-direction: column;
-            }
+        .section:nth-child(2):hover {
+            background-color: #a5d6a7;
+        }
 
-            .nav li {
-                margin: 10px 0;
-            }
+        .section:nth-child(3) {
+            background-color: #b2dfdb;
+        }
 
-            .section {
-                width: 90%;
-            }
+        .section:nth-child(3):hover {
+            background-color: #80cbc4;
+        }
+
+        .section:nth-child(4) {
+            background-color: #fff3e0;
+        }
+
+        .section:nth-child(4):hover {
+            background-color: #ffe0b2;
+        }
+
+        .pdf-link {
+            display: block;
+            margin-top: 0.5rem;
+            color: #007BFF;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <script>
-        document.body.innerHTML = `
-            <header class="header">
-                <img src="https://via.placeholder.com/150?text=SESEO+Formation+Logo" alt="SESEO Formation Logo" class="logo">
-                <h1 class="title">Ressources PDF SESEO Formation</h1>
-            </header>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#contrats">Contrats</a></li>
-                    <li><a href="#factures">Factures</a></li>
-                    <li><a href="#attestations">Attestations fiscales</a></li>
-                </ul>
-            </nav>
-            <main class="content">
-                <section id="contrats" class="section">
-                    <h2>Contrats</h2>
-                    <ul class="file-list">
-                        <li><a href="BDC0001%20PONS.pdf" download>BDC0001 PONS</a></li>
-                        <li><a href="BDC0003%20HOURS.pdf" download>BDC0003 HOURS</a></li>
-                        <li><a href="BDC0004%20PONS.pdf" download>BDC0004 PONS</a></li>
-                        <li><a href="BDC0006%20RAYNALT.pdf" download>BDC0006 RAYNALT</a></li>
-                        <li><a href="BDC0008%20PICCICUTO.pdf" download>BDC0008 PICCICUTO</a></li>
-                        <li><a href="BDC0010%20LACROIX.pdf" download>BDC0010 LACROIX</a></li>
-                    </ul>
-                </section>
-                <section id="factures" class="section">
-                    <h2>Factures</h2>
-                    <ul class="file-list">
-                        <!-- Add your facture files here -->
-                    </ul>
-                </section>
-                <section id="attestations" class="section">
-                    <h2>Attestations fiscales</h2>
-                    <div class="year-folder">
-                        <h3>2017</h3>
-                        <ul class="file-list">
-                            <li><a href="AF20170001%20-%20EPONS.pdf" download>AF20170001 EPONS</a></li>
-                            <li><a href="AF20170003%20-%20FHOURS.pdf" download>AF20170003 FHOURS</a></li>
-                            <li><a href="AF20170004%20-%20FRAYNALT.pdf" download>AF20170004 FRAYNALT</a></li>
-                            <li><a href="AF20170005%20-%20RBRETVITOZ.pdf" download>AF20170005 RBRETVITOZ</a></li>
-                        </ul>
+    <header>
+        <h1>Intranet SESEO FORMATION</h1>
+    </header>
+    <main>
+        <section class="client-list">
+            <h2>Clients</h2>
+            <div class="client" onclick="toggleClientDetails(this)">
+                <h3>Client 1</h3>
+                <div class="client-details">
+                    <div class="section">
+                        <span>Contrats</span>
+                        <a href="path/to/client1/contrats.pdf" class="pdf-link">Voir PDF</a>
                     </div>
-                </section>
-            </main>
-            <footer class="footer">
-                &copy; 2024 SESEO Formation. Tous droits réservés.
-            </footer>
-        `;
+                    <div class="section">
+                        <span>Attestations Fiscales</span>
+                        <a href="path/to/client1/attestations.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Factures</span>
+                        <a href="path/to/client1/factures.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Documents Annexes</span>
+                        <a href="path/to/client1/documents.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="client" onclick="toggleClientDetails(this)">
+                <h3>Client 2</h3>
+                <div class="client-details">
+                    <div class="section">
+                        <span>Contrats</span>
+                        <a href="path/to/client2/contrats.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Attestations Fiscales</span>
+                        <a href="path/to/client2/attestations.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Factures</span>
+                        <a href="path/to/client2/factures.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Documents Annexes</span>
+                        <a href="path/to/client2/documents.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Ajoutez plus de clients ici -->
+            <div class="client" onclick="toggleClientDetails(this)">
+                <h3>Client 3</h3>
+                <div class="client-details">
+                    <div class="section">
+                        <span>Contrats</span>
+                        <a href="path/to/client3/contrats.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Attestations Fiscales</span>
+                        <a href="path/to/client3/attestations.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Factures</span>
+                        <a href="path/to/client3/factures.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Documents Annexes</span>
+                        <a href="path/to/client3/documents.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="client" onclick="toggleClientDetails(this)">
+                <h3>Client 4</h3>
+                <div class="client-details">
+                    <div class="section">
+                        <span>Contrats</span>
+                        <a href="path/to/client4/contrats.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Attestations Fiscales</span>
+                        <a href="path/to/client4/attestations.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Factures</span>
+                        <a href="path/to/client4/factures.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Documents Annexes</span>
+                        <a href="path/to/client4/documents.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="client" onclick="toggleClientDetails(this)">
+                <h3>Client 5</h3>
+                <div class="client-details">
+                    <div class="section">
+                        <span>Contrats</span>
+                        <a href="path/to/client5/contrats.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Attestations Fiscales</span>
+                        <a href="path/to/client5/attestations.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Factures</span>
+                        <a href="path/to/client5/factures.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Documents Annexes</span>
+                        <a href="path/to/client5/documents.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="client" onclick="toggleClientDetails(this)">
+                <h3>Client 6</h3>
+                <div class="client-details">
+                    <div class="section">
+                        <span>Contrats</span>
+                        <a href="path/to/client6/contrats.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Attestations Fiscales</span>
+                        <a href="path/to/client6/attestations.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Factures</span>
+                        <a href="path/to/client6/factures.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Documents Annexes</span>
+                        <a href="path/to/client6/documents.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="client" onclick="toggleClientDetails(this)">
+                <h3>Client 7</h3>
+                <div class="client-details">
+                    <div class="section">
+                        <span>Contrats</span>
+                        <a href="path/to/client7/contrats.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Attestations Fiscales</span>
+                        <a href="path/to/client7/attestations.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Factures</span>
+                        <a href="path/to/client7/factures.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Documents Annexes</span>
+                        <a href="path/to/client7/documents.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="client" onclick="toggleClientDetails(this)">
+                <h3>Client 8</h3>
+                <div class="client-details">
+                    <div class="section">
+                        <span>Contrats</span>
+                        <a href="path/to/client8/contrats.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Attestations Fiscales</span>
+                        <a href="path/to/client8/attestations.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Factures</span>
+                        <a href="path/to/client8/factures.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Documents Annexes</span>
+                        <a href="path/to/client8/documents.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="client" onclick="toggleClientDetails(this)">
+                <h3>Client 9</h3>
+                <div class="client-details">
+                    <div class="section">
+                        <span>Contrats</span>
+                        <a href="path/to/client9/contrats.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Attestations Fiscales</span>
+                        <a href="path/to/client9/attestations.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Factures</span>
+                        <a href="path/to/client9/factures.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Documents Annexes</span>
+                        <a href="path/to/client9/documents.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="client" onclick="toggleClientDetails(this)">
+                <h3>Client 10</h3>
+                <div class="client-details">
+                    <div class="section">
+                        <span>Contrats</span>
+                        <a href="path/to/client10/contrats.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Attestations Fiscales</span>
+                        <a href="path/to/client10/attestations.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Factures</span>
+                        <a href="path/to/client10/factures.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                    <div class="section">
+                        <span>Documents Annexes</span>
+                        <a href="path/to/client10/documents.pdf" class="pdf-link">Voir PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function toggleClientDetails(element) {
+            const details = element.querySelector('.client-details');
+            details.style.display = details.style.display === 'none' || details.style.display === '' ? 'grid' : 'none';
+        }
     </script>
 </body>
 </html>
